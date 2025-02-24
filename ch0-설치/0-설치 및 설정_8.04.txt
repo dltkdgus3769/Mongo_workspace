@@ -1,0 +1,59 @@
+몽고디비 (NoSQL)
+- 설치 
+https://www.mongodb.com/try/download/community
+
+현재 버전 : 8.0.4
+
+-쉘 다운로드
+https://www.mongodb.com/try/download/shell
+
+1) 윈도우즈 기반, 8.0.4 버전으로 연습, 
+압축 해제후 폴더명 변경. 
+이동.
+C:\mongodb_8.0.4\bin
+검색 : 시스템 환경 변수 
+환경변수 -> path 설정. 후 
+창 확인해서 모두 닫기. 
+실행 : cmd -> mongod -version 
+
+공식 문서 
+https://www.mongodb.com/docs/
+
+compass (몽고디비 서버에 접속하는 gui 툴 = heidi, )
+
+서버 시작 
+mongod --dbpath D:\MongoDB\data
+
+서버 종료 
+ctrl + c 
+
+2) 배포, 출시, 서버 작업을 한다면, 도커에 조금씩 관심.
+
+3) vscode 연습장으로, 사용할 예정. 
+확장팩
+검색어: MongoDB for VScode, 1.6.1 
+
+연결 주소, 
+mongodb://localhost:27017
+
+예시
+파일명 : playground-1.mongodb.js
+
+// 한줄 실행, ctrl + alt + s
+// 전체 실행, ctrl + alt + r
+
+4) 인텔리제이 , DataGrip
+
+설정, 
+mongodb 
+에서, 
+confirm run all 체크 해제
+
+
+- 기본구조
+- crud 
+- 집계(커리 조회)
+- 고급쿼리 , 기본 위주로, 
+- 복제, 클라우드 개념처럼, 주서버, 보조서버 형식으로 동기화 놀이 
+- 샤딩, 분산 저장 하는 시스템 
+- 
