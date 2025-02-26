@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Leaflet.js - 마커 표시</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
+
+<body>
+    <div id="map" style="width: 100%; height: 500px;"></div>
+
+    <script>
+        var map = L.map('map').setView([37.5665, 126.9784], 12); // 서울 중심
+
+        // OpenStreetMap 타일 레이어 추가
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap contributors'
+        }).addTo(map);
+
+        // 마커 데이터 배열 (샘플)
+        var locations = [
+            { name: "Seoul Tower", lat: 37.5665, lng: 126.9784 },
+            { name: "Haeundae Beach", lat: 35.1587, lng: 129.1611 },
+            { name: "Namsan Park", lat: 37.5512, lng: 126.9921 },
+            { name: "Gyeongbokgung Palace", lat: 37.5796, lng: 126.9769 },
+            { name: "Lotte World", lat: 37.5112, lng: 127.0996 },
+            { name: "Jeju Island", lat: 33.4996, lng: 126.5312 },
+            { name: "Busan Tower", lat: 35.1019, lng: 129.0327 },
+            { name: "Incheon Airport", lat: 37.4602, lng: 126.4512 },
+            { name: "Daegu Tower", lat: 35.8714, lng: 128.5986 },
+            { name: "Gwangalli Beach", lat: 35.1554, lng: 129.1202 },
+            { name: "Daejeon Expo Park", lat: 36.3745, lng: 127.3845 },
+            { name: "Ulsan Grand Park", lat: 35.5438, lng: 129.3151 },
+            { name: "Gimhae International Airport", lat: 35.1796, lng: 128.9532 },
+            { name: "Seoraksan National Park", lat: 38.1195, lng: 128.4657 },
+            { name: "Suwon Hwaseong Fortress", lat: 37.2851, lng: 127.0093 }
+        ];
+
+        // 마커 추가
+        locations.forEach(function (location) {
+            L.marker([location.lat, location.lng])
+                .addTo(map)
+                .bindPopup(location.name);
+        });
+    </script>
+</body>
+
+</html>
